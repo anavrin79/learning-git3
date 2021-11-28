@@ -1,4 +1,4 @@
-z2_numbers_list = list(range(1,50))
+z2_numbers_list = list(range(1,5000))
 
 primenumbers = list()
 flag = False
