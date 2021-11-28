@@ -19,6 +19,6 @@ for i in z2_numbers_list:
 
 print (primenumbers)
 
-print ("Finito...")
+print ("Finito... testing git update local files update")
 
 #czy zawsze trzeba po zmianie w pliku zrobić add a potem commit?
