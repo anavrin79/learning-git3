@@ -6,7 +6,7 @@ shopping_items = [
 
 def get_index_1_tuple_element(given_tuple):
     """
-    Oto opis funkcji ... stworzona po to aby pokazac jak działa lambda, robi ona to samo co wyrażenie lambda poniżej, czyli tak na prawdę wskazuje po którym elemencie krotki należy posortować listę krotek ...
+    Stworzona po to aby pokazac jak działa lambda, robi ona to samo co wyrażenie lambda poniżej, czyli tak na prawdę wskazuje po którym elemencie krotki należy posortować listę krotek ...
     """
     return given_tuple[1]
 
