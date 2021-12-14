@@ -24,6 +24,11 @@ def getNoOfA4Formats(mmSizes):
         A4 = math.ceil (mmSizes[0]*mmSizes[1]/62370)
         return A4
 
+def totalNoOfFormatsInDir(a4formats):
+        sumOfA4 = 0
+        for i in a4formats:
+                sumOfA4 += i
+        return sumOfA4 
 
 path = False
 
@@ -51,7 +56,10 @@ for pdfFile in listOfFiles:
                 #print(getNoOfA4Formats(mmSizes))
                 a4formats.append(getNoOfA4Formats(mmSizes))
 
-print(a4formats)
+print (totalNoOfFormatsInDir(a4formats)) 
+
+
+#print(a4formats)
 
 #print (getSize(sizeMatrix))
 #print (getNoOfA4Formats(mmSizes))
