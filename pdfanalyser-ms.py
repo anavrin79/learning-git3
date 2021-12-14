@@ -49,20 +49,25 @@ pathSlashed = path + "/"
 print (listOfFiles)
 a4formats = []
 counterOfFiles = 0
+counterOfPages = 0
 
 for pdfFile in listOfFiles:
         absPathFile = pathSlashed + pdfFile
         
         with open(absPathFile, 'rb') as f:
                 counterOfFiles += 1
-                pdf = PdfFileReader(f)
+                pdf = PdfFileReader(f, strict=False)
                 pagesNo = pdf.getNumPages()
-                sizeMatrix = pdf.getPage(0).mediaBox
-                mmSizes = getSize(sizeMatrix)
-                #print(getNoOfA4Formats(mmSizes))
-                a4formats.append(getNoOfA4Formats(mmSizes))
+                
+                for p in range (pagesNo):       #multipage files support
+                        counterOfPages += 1
+                        sizeMatrix = pdf.getPage(p).mediaBox
+                        mmSizes = getSize(sizeMatrix)
+                        #print(getNoOfA4Formats(mmSizes))
+                        a4formats.append(getNoOfA4Formats(mmSizes))
 
 print ("wszystkie pliki", counterOfFiles)
+print ("Wszystkie strony", counterOfPages)
 print ("formaty A4: ", totalNoOfFormatsInDir(a4formats)) 
 
 
