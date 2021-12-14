@@ -2,6 +2,7 @@ import sys
 import os
 import pathlib
 import math
+import minecart
 from PyPDF2 import PdfFileReader
 
 def getSize(sizeMatrix):
@@ -30,6 +31,20 @@ def totalNoOfFormatsInDir(a4formats):
                 sumOfA4 += i
         return sumOfA4 
 
+def getFileColors(file):
+        """
+        returns all colors used in a pdf file - not working ...
+        """
+        colors = set()
+        document = minecart.Document(file)
+        page = document.get_page(0)
+        for shape in page.shapes:
+                if shape.fill:
+                        colors.add(shape.fill.color.as_rgb())
+        return colors
+        #for color in colors: print color
+
+
 path = False
 
 if len(sys.argv) > 1:
@@ -49,6 +64,9 @@ for pdfFile in listOfFiles:
         absPathFile = pathSlashed + pdfFile
         
         with open(absPathFile, 'rb') as f:
+                ###getting info about colors in a file
+                #colors = getFileColors(f)
+                ###
                 pdf = PdfFileReader(f)
                 pagesNo = pdf.getNumPages()
                 sizeMatrix = pdf.getPage(0).mediaBox
