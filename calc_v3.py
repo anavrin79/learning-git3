@@ -8,25 +8,25 @@ second = input("Podaj drugi składnik: ")
 firstnum = float(first)
 secondnum = float(second)
 
-if (operation == "+"):
+if operation == "+":
     print ("działanie: " + operation)
     result = firstnum + secondnum
     print ("Obliczam : ")
     print (str(first) + str(operation) + str(second) + " = " + str(result))
 
-elif (operation == "-"):
+elif operation == "-":
     print ("działanie: " + operation)
     result = firstnum - secondnum
     print ("Obliczam : ")
     print (str(first) + str(operation) + str(second) + " = " + str(result))
 
-elif (operation == "*"):
+elif operation == "*":
     print ("działanie: " + operation)
     result = firstnum * secondnum
     print ("Obliczam :")
     print (str(first) + str(operation) + str(second) + " = " + str(result))
 
-elif (operation == "/"):
+elif operation == "/":
     print ("działanie: " + operation)
     result = firstnum / secondnum
     print ("Obliczam :")
