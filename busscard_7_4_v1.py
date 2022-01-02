@@ -45,9 +45,9 @@ def create_contacts(kind, how_many):
     contacts = []
     for i in range(how_many):
         if kind == 'b':
-            contacts = (BusinessContact(first_name=fake.first_name(), last_name=fake.last_name(), company=fake.company(), occupation=fake.job(),email_address=fake.email(), tel_priv=fake.phone_number(), tel_work=fake.phone_number()))
+            contacts.append(BusinessContact(first_name=fake.first_name(), last_name=fake.last_name(), company=fake.company(), occupation=fake.job(),email_address=fake.email(), tel_priv=fake.phone_number(), tel_work=fake.phone_number()))
         elif kind == 'h':
-            contacts = (BaseContact(first_name=fake.first_name(), last_name=fake.last_name(), email_address=fake.email(), tel_priv=fake.phone_number()))
+            contacts.append(BaseContact(first_name=fake.first_name(), last_name=fake.last_name(), email_address=fake.email(), tel_priv=fake.phone_number()))
     return contacts
 
 
@@ -66,5 +66,4 @@ contacts = create_contacts(kind, how_many)
 print (contacts)
 card1 = create_contacts(kind, how_many)
 BusinessContact.workcontact(card1)
-
 
