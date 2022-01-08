@@ -1,6 +1,7 @@
 from faker import Faker
 fake = Faker("pl_PL")
 
+import this
 
 class BaseContact:
     def __init__(self, first_name, last_name, email_address, tel_priv):
@@ -16,14 +17,14 @@ class BaseContact:
         return f"Card(first_name={self.first_name} last_name={self.last_name}, adres email={self.email_address})"
 
     def contact(self):
-        return f"Choose home phone: {self.tel_priv} and call to {self.first_name} {self.last_name} and lenght {self.label_lenght()}"
+        return f"Choose home phone: {self.tel_priv} and call to {self.first_name} {self.last_name} and lenght {self.label_lenght}"
 
     @property
     def label_lenght(self):
         return sum([len(self.first_name), len(self.last_name)])
 
-    def label_lenght(self):
-        return sum([len(self.first_name), len(self.last_name)])
+    #def label_lenght(self):
+    #    return sum([len(self.first_name), len(self.last_name)])
 
 
 class BusinessContact(BaseContact):
@@ -40,7 +41,7 @@ class BusinessContact(BaseContact):
         return f"Card(first_name={self.first_name} last_name={self.last_name}, adres email={self.email_address})"
 
     def workcontact(self):
-        return f"Choose work phone: {self.tel_work} and call to {self.first_name} {self.last_name}  and lenght {self.label_lenght()}"
+        return f"Choose work phone: {self.tel_work} and call to {self.first_name} {self.last_name}  and lenght {self.label_lenght}"
 
 
 def create_contacts(kind, how_many):
@@ -79,5 +80,3 @@ for contact in all_contacts:
 
 print(contact.contact())
 print(contact.workcontact())
-print(BusinessContact.label_lenght(contact))
-print(contact.label_lenght())
