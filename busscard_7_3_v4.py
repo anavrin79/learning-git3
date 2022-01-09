@@ -1,8 +1,6 @@
 from faker import Faker
 fake = Faker("pl_PL")
 
-import this
-
 class BaseContact:
     def __init__(self, first_name, last_name, email_address, tel_priv):
         self.first_name = first_name
@@ -17,7 +15,7 @@ class BaseContact:
         return f"Card(first_name={self.first_name} last_name={self.last_name}, adres email={self.email_address})"
 
     def contact(self):
-        return f"Choose home phone: {self.tel_priv} and call to {self.first_name} {self.last_name} and lenght {self.label_lenght}"
+        return f"Choose home phone: {self.tel_priv} and call to {self.first_name} {self.last_name}"
 
     @property
     def label_lenght(self):
@@ -41,7 +39,7 @@ class BusinessContact(BaseContact):
         return f"Card(first_name={self.first_name} last_name={self.last_name}, adres email={self.email_address})"
 
     def workcontact(self):
-        return f"Choose work phone: {self.tel_work} and call to {self.first_name} {self.last_name}  and lenght {self.label_lenght}"
+        return f"Choose work phone: {self.tel_work} and call to {self.first_name} {self.last_name}"
 
 
 def create_contacts(kind, how_many):
@@ -74,9 +72,11 @@ all_contacts = list_of_base_contacts + list_of_business_contacts
 
 for contact in all_contacts:
     if isinstance(contact, BusinessContact):
-        print(contact.workcontact())
+        print(f'{contact.workcontact()} {contact.label_lenght}')
     else:
-        print("mamy tutaj do czynienia z bazowym kontaktem")
+        #print("mamy tutaj do czynienia z bazowym kontaktem")
+        print(f'{contact.contact()} {contact.label_lenght}')
+        #print(contact.label_lenght)
 
-print(contact.contact())
-print(contact.workcontact())
+#print(contact.contact())
+#print(contact.workcontact())
