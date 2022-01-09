@@ -8,27 +8,14 @@ second = input("Podaj drugi składnik: ")
 firstnum = float(first)
 secondnum = float(second)
 
-if operation == "+":
-    print ("działanie: " + operation)
-    result = firstnum + secondnum
-    print ("Obliczam : ")
-    print (str(first) + str(operation) + str(second) + " = " + str(result))
+def switchfun(operation, firstnum, secondnum):
+    return {
+        '+': firstnum + secondnum,
+        '-': firstnum - secondnum,
+        '*': firstnum * secondnum,
+        '/': firstnum / secondnum,
+    }[operation]
 
-elif operation == "-":
-    print ("działanie: " + operation)
-    result = firstnum - secondnum
-    print ("Obliczam : ")
-    print (str(first) + str(operation) + str(second) + " = " + str(result))
-
-elif operation == "*":
-    print ("działanie: " + operation)
-    result = firstnum * secondnum
-    print ("Obliczam :")
-    print (str(first) + str(operation) + str(second) + " = " + str(result))
-
-elif operation == "/":
-    print ("działanie: " + operation)
-    result = firstnum / secondnum
-    print ("Obliczam :")
-    print (str(first) + str(operation) + str(second) + " = " + str(result))
+print ("działanie: " + operation)
+print (f'Obliczam : {first} {operation} {secondnum} = {switchfun(operation, firstnum, secondnum)}')
 
