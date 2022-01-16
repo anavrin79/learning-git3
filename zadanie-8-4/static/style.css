@@ -1,0 +1,17 @@
+.omnie {
+color: black;
+font-size: 25pt;
+}
+
+.kontakt {
+color: green;
+font-size: 30pt;
+}
+
+.kontakt:hover {
+background-color: gray;
+}
+
+.omnie:hover {
+background-color: red;
+}
