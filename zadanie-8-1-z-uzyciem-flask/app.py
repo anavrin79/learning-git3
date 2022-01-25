@@ -2,34 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello():
-    my_name = "Marcin"
-    return f'Hello, {my_name}!'
-
-@app.route('/hello')
-def helloagain():
-    my_name = "Marcin"
-    return f'Hello again, {my_name}!'
-
-helloagain()
-
-@app.route('/blog')
-def blog_main():
-    return f"This is a main blog page"
-
-@app.route('/blog/<id>')
-def blog(id):
-    return f"This is a blog entry #{id}"
-
-
-@app.route('/message', methods=['POST'])
-def post_message():
-    return "OK"
-
-
 from flask import request, redirect
-
 
 from flask import render_template
 
