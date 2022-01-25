@@ -55,36 +55,36 @@ def greeting():
        return redirect("/")
 
 
-@app.route('/wizytowka', methods=['GET', 'POST'])
-def wizytowka():
+@app.route('/busscard', methods=['GET', 'POST'])
+def busscard():
    if request.method == 'GET':
        print("We received GET")
-       return render_template("wizytowka.html")
+       return render_template("busscard.html")
    elif request.method == 'POST':
        print("We received POST")
        print(request.form)
        return redirect("/")
 
 @app.route('/omnie', methods=['GET', 'POST'])
-def omnie():
+def aboutme():
    if request.method == 'GET':
        print("We received GET")
-       return render_template("omnie.html")
+       return render_template("aboutme.html")
    elif request.method == 'POST':
        print("We received POST")
        print(request.form)
        return redirect("/")
 
-@app.route('/kontakt', methods=['GET', 'POST'])
-def kontakt():
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
    if request.method == 'GET':
        print("We received GET")
        #print(f"{whatever}")
        #text = request.form['whatever']
        #return render_template('test.html', value1=text)
-       return render_template("kontakt.html")
+       return render_template("contact.html")
    elif request.method == 'POST':
        print("We received POST")
        print(request.form)
-       return redirect("/wizytowka")
+       return redirect("/busscard")
 
