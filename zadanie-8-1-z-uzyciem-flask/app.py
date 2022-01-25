@@ -38,7 +38,7 @@ def busscard():
        print(request.form)
        return redirect("/")
 
-@app.route('/omnie', methods=['GET', 'POST'])
+@app.route('/aboutme', methods=['GET', 'POST'])
 def aboutme():
    if request.method == 'GET':
        print("We received GET")
