@@ -16,7 +16,6 @@ def message():
        print(request.form)
        return redirect("/")
 
-
 @app.route('/greeting', methods=['GET', 'POST'])
 def greeting():
    if request.method == 'GET':
@@ -26,7 +25,6 @@ def greeting():
        print("We received POST")
        print(request.form)
        return redirect("/")
-
 
 @app.route('/busscard', methods=['GET', 'POST'])
 def busscard():
