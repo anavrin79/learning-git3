@@ -1,17 +1,17 @@
-.omnie {
+.aboutme {
 color: black;
 font-size: 25pt;
 }
 
-.kontakt {
+.contact {
 color: green;
 font-size: 30pt;
 }
 
-.kontakt:hover {
+.contact:hover {
 background-color: gray;
 }
 
-.omnie:hover {
+.aboutme:hover {
 background-color: red;
 }
