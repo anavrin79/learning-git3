@@ -9,28 +9,28 @@ app = Flask(__name__)
 def root():
    if request.method == 'GET':
        print("We received GET")
-       return render_template("omnie.html")
+       return render_template("aboutme.html")
    elif request.method == 'POST':
        print("We received POST")
        print(request.form)
        return redirect("/")
 
-@app.route('/omnie', methods=['GET', 'POST'])
-def omnie():
+@app.route('/aboutme', methods=['GET', 'POST'])
+def aboutme():
    items = ["raz", "dwa", "trzy"]
    if request.method == 'GET':
        print("We received GET")
-       return render_template("omnie.html", items=items)
+       return render_template("aboutme.html", items=items)
    elif request.method == 'POST':
        print("We received POST")
        print(request.form)
        return redirect("/")
 
-@app.route('/kontakt', methods=['GET', 'POST'])
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
    if request.method == 'GET':
        print("We received GET")
-       return render_template("kontakt.html")
+       return render_template("contact.html")
    elif request.method == 'POST':
        print("We received POST")
        print(request.form)
