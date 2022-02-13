@@ -1,0 +1,17 @@
+.aboutme {
+color: black;
+font-size: 25pt;
+}
+
+.contact {
+color: green;
+font-size: 30pt;
+}
+
+.contact:hover {
+background-color: gray;
+}
+
+.aboutme:hover {
+background-color: red;
+}

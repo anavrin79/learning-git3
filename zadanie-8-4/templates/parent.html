@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% endblock %}
+    </head>
+    <body>
+        <h1>Wizytowka</h1>
+        <img src="https://uploads.kodilla.com/bootcamp/py/08/code.jpg" alt="Laptop screen with code" title="Code">
+        <div id="content">{% block content %}{% endblock %}</div>
+
+        <ul>
+            <li class='aboutme'><a href='aboutme'>O mnie</a></li>
+            <li class='contact'><a href='contact'>Kontakt</a></li>
+        </ul>
+    </body>
+</html>
