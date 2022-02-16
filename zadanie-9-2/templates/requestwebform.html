@@ -1,0 +1,25 @@
+<label for="cars">Choose a currency you want to sell:</label>
+
+
+<form method='post' action="/requestweb/">
+<div class="container">
+  <select name="currency" id="currency">
+  {% for c in currency %}
+  <option value="{{c}}" name="code">{{c}}</option>
+  {% endfor %}
+</select>
+
+    <label for="amount"><b>Amount to exchange to PLN</b></label>
+    <input type="text" placeholder="Enter amount" name="amount" required>
+    <button type="submit">Calculate</button>
+  </div>
+
+</form>
+
+
+{% if amount2get != "___" %}
+<div class='exchanged'>
+  <p>You enchanged {{amount}} {{codefromfile}}</p>
+  <p>You will receive: {{amount2get}} PLN</p>
+</div>
+{% endif %}
